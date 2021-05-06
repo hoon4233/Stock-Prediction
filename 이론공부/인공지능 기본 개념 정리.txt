@@ -1,0 +1,222 @@
+참고 사이트 : https://gomguard.tistory.com/47?category=712467
+
+
+일반 프로그램과 인공지능 기술이 접합된 프로그램을 구별하는 방법 두가지
+1. 인풋 데이터의 양이 증가하면 결과의질이 향상되는가
+	일반적인 프로그램은 알고리즘을 중심으로 실행되기 때문에 인풋데이터의 양에 관계없이 결과가 동일하다
+		ex) 계산기
+2. 블랙박스 기술인가
+	기존 프로그램들은 아무리 복잡해도 절차대로 진행해가며 어떤 과정을 거치는지 인지할 수 있지만
+	인공지능 알고리즘들은 이런식으로 알기 어렵다.
+
+AI >> 머신러닝 >> 딥러닝 (왼쪽으로 갈수록 큰개념이다.)
+
+
+머신러닝 알고리즘 타입
+	지도학습(supervised learning)
+		훈련 데이터(training data)로부터 하나의 함수를 유추해내기 위한 기계 학습의 방법이다.
+			이렇게 유추된 함수 중 연속적인 값을 출력하는 것을 회귀분석(regression)이라 하고 주어진 입력이 어떤 종류의 값인지 표식하는 것을 분류(classification)이라고 한다.
+		학습기가 기존의 훈련 데이터로부터 나타나지 않던 상황까지도 일반화하여 처리할 수 있어야 한다.
+		
+		사용하는 알고리즘들
+			nearest neighbor, naive bayes, decision tress, linear regression ...
+
+	비지도학습(unsupervised learning)
+		데이터가 어떻게 구성되었는지를 알아내는 문제의 범주
+		지도학습 혹은 강화학습과는 달리 입력값에 대한 목표치가 주어지지 않는다.
+		목표치가 주어지지 않은 입력 데이터들을 군집화(clustering)하는데 목적이 있다.
+
+		사용하는 알고리즘
+			assiciation rules, k-means clustering ...
+	강화학습
+		어떤 환경 안에서 정의된 에이전트가 현재의 상태를 인식하여, 선택 가능한 행동들 중 보상을 최대화하는 행동 혹은 행동 순서를 선택하는 방법
+		강화학습은 어떠한 데이터도 없이 규칙만 가지고 학습하는 알고리즘이라고 생각 할 수 있다.
+
+	메타학습
+
+
+
+인공신경망 (perceptron)
+	사람의 신경인 뉴런을 본따 만듬
+	신호들을 받은 뒤 출력을 하기도 하고 하지 않기도 함
+	여러 input들에 weight를 곱해 activation function에 넣고 0 또는 1을 출력
+		(활성화함수 - 출력의 기준선을 제시 하는것, ex) 여러 input을 모아 해당 값이 임계값을 넘으면 1을 그렇지 못하면 0을 출력)
+		초창기에는 step function ( input 값들의 조합이 일정 기준을 넘을 경우에만 출력하게끔 만들어주는 함수 )을 사용했다.
+	초기의 perceptron은 하나의 선으로 결과들을 구별할 수 있었다면 문제들을 풀어낼 수 있었다.
+		하지만 xor처럼 1개의 선으로 구별할 수 없는 문제들을 풀 수 없었기에 문제가 되었다.
+
+
+
+MLP (multi layer perceptron)
+	xor 게이트는 and, or not 등을 조합해서 만들 수 있다.
+	기존의 perceptron으로 and와 or 게이트를 만들 수 있었으므로 perceptron들을 조합하면 xor 게이트를 만들 수 있을 것이다.
+
+	input layer, output layer를 두고 그 사이에 여러 layer를 구성하자
+		(각각의 layer는 node로 구성되어 있고 다른 layer의 node들과 perceptron을 구성한다.)
+		사이의 여러 layer들을 각각 hidden layer라고 하고 이 hidden layer가 3층 이상이 되면 deep neural network(DNN)라고 부른다.
+		layer가 깊어지고 node의 수가 많아질수록 정해주어야할 parameter(weight, bias 등) 수는 급격히 증가한다. 또한 parameter들이 독립적이지 않고 서로 관계가 있다면 parameter를 정하기 더 어려워진다.
+
+	학습과정
+	만든 모델이 계산한 값이 정답보다 작으면 좀 더 크게 나올 수 있게 parameter들을 수정하고 정답보다 크면 좀 더 작게 나올 수 있게 parameter들을 수정하는 과정을 한다.
+	즉 계산 값과 정답의 차이를 작게 만들어 나가는 과정이 학습과정이다.
+	(W<new> = W<old> - learning rate * gradient * cost function)
+	learning rate == 한번에 얼마나 학습할지
+	gradient == 총 error에 weight가 얼마나 영향을 끼치는가 (총 에러를 궁금한 weight로 미분)
+	cost function의 예 ) Minimum squared error, Averaged cross entropy error
+
+
+	기존의 perceptron에서 사용하는 activation function은 step function이여서 gradient가 어느 위치에서든 0이였다. 이를 해결하기 위해 step function처럼 출력값이 0과 1 사이에 있으면서 미분 가능한 함수가 필요했다. ex) sigmoid function
+
+
+
+역전파 알고리즘 (backpropagation)
+	간단한 문제들 같은 경우 역전파 알고리즘을 사용하지 않고 normal equation이나 cost function의 해를 바로 구하는 방식으로 풀어낼 수 있지만 복잡하고 어려운 문제들은 역전파 알고리즘을 사용하는 것이 더 효율적이다.
+
+	ouput layer와 인접한 hidden layer들의 parameter들의 갑을 구하면서 점점 input layer와 가까운 layer들로 내려간다.
+
+	전체 error에 대해 구하고 싶은 weight를 편미분해주고 chain rule을 이용한다.
+	전체에러를 해당 weight로 편미분한 값을 구하면 (이게 gradient)
+	Wnew = Wold - learning rate * gradient에 넣어주어 weight를 업데이트한다.
+
+	순전파 방향이 아닌 역방향으로 학습을 하는 이유는 뒤에서 계산한 편미분 값(output layer와 가까운 layer들의 weight를 구하면서 계산한 값들)들이 앞쪽으로 진행되면서 다시 사용되기 때문이다.
+
+
+	vanishing gradient
+		MLP를 학습시키는 방법인 backpropagation 중 gradient 항이 사라지는 문제이다.
+		(Wnew = Wold - learning rate * gradient 에서 learning rate * gradient 항이 0에 가까워져 학습이 불가능해지는 현상을 말한다.)
+		
+		여태까지 활성화 함수로 sigmoid를 사용했는데 sigmoid의 도함수의 최대값은 0.25이다. 
+		즉 망이 깊어질수록 gradient가 1/4씩 줄어든다는 의미이다.
+		또한 sigmoid는 망이 3번 충첩되었을 경우에 모든 출력값이 0.659에 수렴하는 구조를 가지고 있다.
+
+		이를 해결하기 위해 새로운 activation function을 사용한다.
+			tanh(하이퍼볼릭 탄젠트)
+				sigmoid와 동일한 형태를 가지고 있지만 -1부터 1까지의 출력값을 가진다.
+				또한 도함수의 최대값이 1이기 때문에 vanishing gradient 현상이 조금은 완화된다.
+
+			ReLU(Rectified Linear Unit)
+				특징
+				0보다 작은 값은 0을 출력하고 0보다 큰 값은 y=x 그래프를 따라 출력한다.
+				도함수는 계단 함수 형태이다.
+
+				장점
+				sigmoid나 tanh의 도함수는 계산식으로 나오기 때문에 컴퓨팅 자원을 소모해야하지만 ReLU의 도함수는 0이나 1이기 때문에 컴퓨팅 자원측면에서 경제적이다.
+				최대값이 1보다도 큰 값도 가능하기 때문에 학습이 빠르다는 장점이 있다.
+
+				단점
+				0보다 작은 경우 0을 반환하고 0을 반환한 노드의 경우에는 다시 값을 갖기 어렵기 때문에 신경이 죽어버리는 현상이 발생한다.
+				=> 이 문제를 해결하기 위해 PReLU, Leaky ReLU 등의 함수들이 나왔다.
+
+
+
+가중치 초기화
+	weight를 평균 0이며 표준편차가 1인 표준 정규분포를 이용해 초기화 했을 경우 sigmoid 함수의 출력값이 0과 1에 치우치게 되고 이는 gradient 값이 0에 가까운 값을 갖게 되므로 gradient vanishing 현상의 원인이 되었다. 따라서 weight를 적절하게 초기화 한다면 gradient vanishing 문제를 어느정도 완화할 수 있다.
+
+	weight를 초기화 할때 표준편차가 크다면 0과 1에 치우치는 현상이 발생할 것이다.
+	( sigmoid 그래프 생각해보면 왜 그런지 쉽게 알 수 있다. )
+	따라서 표준편차를 작은 수로 하여 초기화 한다.
+
+	그런데 학습을 할때 출력값들이 표준 정규 분포 형태를 갖으면 안정적으로 학습이 가능한데
+	단순히 표준편차를 줄여주는 방법은 이걸 보장해주지 않으므로
+	Xavier initialization을 사용한다.
+
+	Xavier initialization
+		표준 정규 분포를 입력 개수의 표준편차로 나누어주는 방법이다.
+		w = np.random.randn(n_input, n_output) / sqrt(n_input)
+
+		sigmoid 함수를 사용할땐 적합하지만 ReLU 함수를 사용하면 출력값이 0으로 수렴하고 평균과 표준편차 모두 0으로 수렴하기 때문에 ReLU 함수를 사용할때는 Xavier initialization을 사용 할 수 없다.
+
+	He initialization
+		ReLU 함수를 사용할때 사용하는 초기화 방식
+		인풋 개수의 절반의 제곱근으로 나누어주면 된다.
+		w = np.random.radn(n_input,n_output) / sqrt(n_input/2)
+
+	즉 tanh나 sigmoid를 사용할 시 Xavier로
+		ReLU 사용시 He로 초기화 하면 된다.
+
+	신경망이 깊어지면 가중치들의 작은 변화가 큰 변화로 이어지는 불안정한 현상들이 생겼다
+	이를 해결하기 위해 처음에 가중치를 잘 설정해주는 방식을 사용하는 것이 좋고 Xavier, He가 있다는 것을 살펴보았다.
+
+
+
+출력값 정규화
+	배치 정규화
+		배치 정규화는 각 층의 출력값들을 정규화하는 방법이다.
+		신경망을 학습시킬 때 보통 전체 데이터를 한 번에 학습시키지 않고 조그만 단위로 분할해서 학습을 시키는데 이 때의 조그만 단위가 배치이다.
+		배치별로 구분하고 각각의 출력값들을 정규화 하기 때문에 배치 정규화라는 이름을 갖고 있다.
+
+		깊은 신경망일 수록 같은 input 값을 갖더라도 가중치가 조금만 달라지면 완전히 다른 값을 얻게 될 수 있다.
+		이를 해결하기 위해 각 층의 출력값에 배치 정규화 과정을 추가해준다면 가중치의 차이를 완화하여 보다 안정적인 학습이 이루어질 수 있다.
+
+		이 정규화 할때의 평균과 표준편차 역시 역전파를 통해 학습이 가능하다.
+		이 정규화 할때의 parameter들 값들은 저장해두었다가 test 할때 다시 사용해야 한다.
+
+
+
+optimization
+	보통 딥러닝에서의 optimization은 학습속도를 빠르고 안정적이게 하는 것을 뜻한다.
+
+	stochastic gradient descent
+		전체 데이터를 한꺼번에 학습 시켜 가중치를 수정하는 것은 시간이 너무 오래 걸리니 전체 데이터를 나누어서 학습을 진행하자
+			ex) 1억건의 데이터라면 1천만 건씩 나누어서 학습을 진행하자
+
+		퍼포먼스가 향상되긴 했지만 만족할만한 수준은 아니였고 cost의 최소점이 아닌 극소점을 찾은 뒤 더 이상 학습이 진행되지 않았다.
+
+	learning rate와 gradient를 조정하는 방향으로 다양한 옵티마이저들이 나왔다
+	ex) adam == learning rate 와 gradient를 모두 고려하자
+
+
+perceptron을 만들고 이를 여러개 쌓으며 activation function을 이용해 MLP를 만들었음
+MLP가 갖는 문제점 ( ex) vanishing gradient, 가중치를 구하는데 오래걸림 ) 등을
+다양한 활성화 함수 사용, 역전파, 가중치 초기화, 배치 정규화, optimizer 등을 이용해 개선했다.
+
+
+
+MLP는 여러 문제를 풀어냈지만 영상이나 이미지를 처리하는데 있어서 문제점이 있었다.
+	ex) 사진을 인식하는데 같은 사진임에도 1픽셀만 움직여도 input 값이 엄청 많이 변화하고 기존에 학습시켜두었던 weight 값이 쓸모가 없어졌다.
+
+	이를 해결하기 위해 위치나 기울기 등이 아닌 특징을 찾아서 이미지를 인식하는 방법을 사용하기 시작했다.
+	처음에는 가장 기초가 되는 특징(feature)부터 확인하고 그 특징들을 조합해서 보다 복잡한 특징이 존재하는지 살펴본 뒤 마지막으로 물채를 분류하는 과정을 거친다.
+	이러한 기능을 하는것이 Convolution Neural Network (CNN) 이다.
+
+	CNN은 처음 이미지를 input으로 받은 뒤 convolution 과정과 pooling 과정을 반복하여 거친 뒤 MLP를 거친다.
+	이때의 MLP는 모든 노드들이 연결되어 있는 레이어라 해서 fully connected layer라고 부른다.
+
+	convolution - 이미지에서 어떤 특징이 얼마나 있는지를 구하는 과정
+	pooling - 이미지의 뒤틀림이나 크기변화에 다른 왜곡의 옇양을 축소화는 과정
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

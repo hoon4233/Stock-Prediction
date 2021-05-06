@@ -1,0 +1,101 @@
+참고사이트 : https://teddylee777.github.io/tensorflow/lstm-stock-forecast
+
+FinanceDataReader는 주식가격, 지수, 환율, 암호화페 가격, 종목 리스팅 등 금융 데이터 수집 라이브러리이다.
+
+
+scikit-learn (sklearn)으로 데이터를 전처리하고 test_set과 train_set으로 나눠준다.
+
+표준화 (standardization)
+표준화는 데이터의 평균을 0, 분산 및 표준편차를 1로 만들어 주는 일이다.
+데이터의 분포를 단순화 시키고, 비교를 용이하게 한다.
+
+정규화 (normalization)
+표준화와는 다르게 모든 데이터가 0~1 사이의 값을 가지도록 조정한다.
+즉 데이터의 최소값은 0, 최대값은 1이 된다.
+
+
+tensroflow dataset을 활용해 시퀀스 데이터셋 구성한다. (우리는 케라스로 하기로 함)
+
+
+
+
+
+참고사이트 : https://teddylee777.github.io/tensorflow/LSTM%EC%9C%BC%EB%A1%9C-%EC%98%88%EC%B8%A1%ED%95%B4%EB%B3%B4%EB%8A%94-%EC%82%BC%EC%84%B1%EC%A0%84%EC%9E%90-%EC%A3%BC%EA%B0%80
+(케라스의 LSTM, (시가, 고가, 저가, 거래량)을 이용해 종가 얘측하기)
+
+
+시계열 데이터의 데이터셋은 보통 window_size라고 정의 한다
+	window_size는 과거 기간의 주가 데이터에 기반하여 다음날의 종가를 예측할 것인가를 정하는 parameter
+		ex ) 과거 20일을 기반으로 내일 데이터를 예측한다고 가정하면 window_size = 20 이 된다.
+
+
+
+
+
+
+참고사이트 : https://keras.io/ko/getting-started/sequential-model-guide/
+케라스 sequential 모델
+
+model = Sequential([
+    Dense(32, input_shape=(784,)),  #순서대로 출력노드 수, 입력 노드수(처음 입력층에서만 사용)
+    Activation('relu'),
+    Dense(10),
+    Activation('softmax'),
+])
+	레이어를 선형으로 연결하여 구성
+	첫번째 레이어의 입력 형태만 정해주면 두번째 이후 레이어들은 자동으로 형태를 추정할 수 있기 때문에 형태 정보를 갖고 있을 필요는 없습니다.
+
+model.compile(optimizer='rmsprop',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+    모델을 학습시키기 이전에 compile 메소드를 통해서 학습 방식에 대한 환경설정을 해야 한다.
+    optimizer(정규화기) - adam, rmsprp나 adagrad와 같은 기존의 정규화기 넣기
+    	손실 함수를 기반으로 네트워크가 어떻게 업데이트될지 결정
+    loss(손실 함수) - 모델의 최적화에 사용되는 목적함수 (mean squared error 같은 거)
+    metrics(기준 리스트) - 평가 기준. 학습에는 영향을 미치지 않지만 학습 과정 중에 제대로 학습되고 있는지를 살펴 볼 수 있다.
+    		분류 문제에서는 보통 metrics=['accuracy']
+
+
+# Generate dummy data
+import numpy as np
+data = np.random.random((1000, 100))
+labels = np.random.randint(2, size=(1000, 1))
+# Train the model, iterating on the data in batches of 32 samples
+model.fit(data, labels, epochs=10, batch_size=32)
+	케라스 모델들은 입력 데이터와 라벨로 구성된 numpy 배열 위에서 이루어짐
+	fit 함수가 실질적으로 학습을 시키는 함수이다.
+
+model.evaluate(x, y, batch_size=1)
+	만들어진 모델에 데이터를 넣고 손실함수를 계산한다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

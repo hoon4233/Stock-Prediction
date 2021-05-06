@@ -1,0 +1,158 @@
+1. 데이터 불러오기
+STOCK_CODES == 기업코드
+
+stock == 기업들의 주가 정보를 담고 있습니다.
+ex )
+현재 일로부터 3200일(num_data만큼) 전까지의 주가정보를 담고 있습니다.
+DataFrame 구조는
+            시가 고가 저가 종가 거래랑 변화량 기업코드
+3200일전                                삼성전자
+3199일전                                삼성전자
+
+                    .
+                    .
+                    .
+                    .
+                    .
+오늘                                    삼성전자
+3200일전                                SK하이닉스
+3199일전                                SK하이닉스
+                    .
+                    .
+                    .
+                    .
+                    .
+오늘                                    SK하이닉스
+3200일전                                현대차
+                    .
+                    .
+                    .
+                    .
+                    .
+
+
+
+
+2. 데이터 전처리
+scaler == 0~1 사이의 값으로 바꾸기 위해 사용
+
+scale_cols == 기존의 DataFrame에서 시가 고가 저가 종가 기업코드 만 남기고 다 없애기 위해 사용
+
+df == scaler와 scale_cols를 적용하고 나온 DataFrame
+
+3. dataset 만들기
+전체 데이터 셋을 train dataset(전체 수 * tr_rate<0.75>), test dataset(전체 수 * te_rate<0.25>)로 나눕니다.
+ex ) 3200(1개의 기업 데이터 수) * 0.75 = 1개 기업의 train set (3200일 전 주가 ~ 800일 전 주가)
+     3200(1개의 기업 데이터 수) * 0.25 = 1개 기업의 test set (800일 전 주가 ~ 오늘 주가)
+
+train == 위에서 나눈 2400 * 6 (STOCK_CODES 에 들어있는 기업들) 만큼의 data를 가지고 있습니다.
+test == 위에서 나눈 800 * 6 (STOCK_CODES 에 들어있는 기업들) 만큼의 data를 가지고 있습니다.
+
+WINDOW_SIZE == 하루의 주가를 예측할때 이전 며칠치 데이터를 볼지를 정합니다.
+ex ) WINDOW_SIZE == 20 일때
+    20일날 주가를 예측할때 1~19일의 주가가 사용됨
+
+feature_cols == 모델애 input으로 넣어줄 Dataframe의 cols를 확정 짓습니다.
+label_cols == 모델의 ouput의 cols를 정해줍니다.
+ex ) 여기선 종가와 기업코드를 넣었을때 종가가 output으로 나오기 위해
+
+train_feature, train_label, make_dataset
+make_dataset 함수는 1개의 data(?)를 만들어주는 함수입니다.
+ex ) 
+train_feature ==[ [1~19일 정보], [2~20일 정보] ...  ]
+train_label == [[20일 정보], [21일 정보] ....]
+
+x_train, x_valid, y_train, y_valid, train_test_split
+train_feature와 train_label을 train set중 실제 train 부분과 validation 부분으로 나눠 주는 것으로 알고 있습니다.
+인자 값 test_size와 random_state는 그냥 있는거 썼고
+shuffle == True는 주가가 보통 시간이 지날수록 커지는 추세니까 그래도 shuffle 해서 넣는게 더 잘 학습될거 같아서 썼습니다.
+
+test_feature, test_label, make_dataset
+위에서 train_feature, train_label 할때랑 똑같이 test도 만듭니다. 
+(단 test 데이터를 가지고) 
+(test할때 쓰는거니까 train&validation처럼 한번더 나눠주는건 안했습니다. -> train_test_split 안씀)
+
+
+
+4. 모델
+블로그에서 Conv1D, LSTM, Dense 2개 쌓아서 하는거는 이해가 안가서
+블로그 다른글 찾아보니 입력데이터가 큰규모의 데이터가 아니라서 
+LSTM 1개로 해도 비슷한 성능이 나온다는거 보고 그냥 LSTM 1개에 Dense 1개 썼습니다.
+
+LSTM activation function == ReLu
+model의 Loss function == Huber
+        Optimizer == Adam
+        기준 metrix == mse
+        early_stopping의 patience == 10
+        epochs == 200
+        batch_size == 16
+
+
+
+5. 정확도 측정
+matplotlib 쓰면 표를 못 그리고 vscode가 자꾸 멈춰버려서
+모델이 뱉어낸 값과 실제 값의 차를 계산했습니다.
+idx : , pred - ori :  == 는 특정 날짜를 기준으로 예측값에서 실제 값을 뺀 것이고
+result_sum , mean :  == 은 위의 값들의 절대값을 다 더한값과 그 다 더한 값의 평균입니다.
+
+pred == 앞서 나눈 test_feature를 model에 넣었을때 나오는 예측값
+np_y_test == 앞서 나눈 test_label(실제값)을 numpy array로 바꾼 것
+factor == 위에 <idx : , pred - ori>m, <result_sum , mean> 계산할때 소숫점 범위 넘어가서 계산이 이상하게 될까봐 일정수 곱해주며 보정하려고 썼습니다.
+(근데 1로 하나 10000로 하나 별로 차이는 없는거 같습니다. -> 파이썬 소숫점 계산 때문에 값이 크게 바뀌지는 않는듯. 그래서 그냥 1로 썼습니다.)
+
+
+
+
+
+6. 파일 설명
+stock_ori는 블로그에 나온 코드 그대로 복사 해온 것이고
+stock_tmp는 stock_ori에서 import 해오는 부분을 다 위로 올리기만 한 것이고
+stock_cus 는 위에서 설명한대로 코드를 바꿔본 것입니다.
+
+result_tmp10.txt는 stock_tmp로 돌렸고
+result_cus10.txt는 stock_cus로 돌렸습니다.
+
+
+
+7. 문제점
+train_feature, test_label을 나눌때 
+
+train_feature ==[ [1~19일 정보], [2~20일 정보] ...  ]
+train_label == [[20일 정보], [21일 정보] ....]
+
+라고 했는데 여기서 문제점이
+ex )
+            시가 고가 저가 종가 거래랑 변화량 기업코드
+3200일전                                삼성전자
+3199일전                                삼성전자
+
+                    .
+                    .
+                    .
+19일전                                  삼성전자  <--- 여기서 make_dataset 할때 발생
+                    .
+                    .
+오늘                                    삼성전자      
+3200일전                                SK하이닉스
+3199일전                                SK하이닉스
+
+
+현재 make_dataset의 로직을 따라가보면 위의 <---- 부분에서
+[19일전 삼성전자 ~ 오늘 삼성전자] 가 train_feater에 들어가고
+해당 index의 train_label에는 [3200일 전 SK 하이닉스]가 들어갑니다.
+
+그렇다면 삼성전자의 옛날 주가를 이용해 SK 하이닉스의 오늘 주가를 예측하게 학습이 될 것입니다.
+
+그런데 학습 시키고 나서 예측값과 실제값을 비교할때
+test_feature를 model에 넣어서 나온 pred와
+test_feature의 실제 label인 test_label을 빼므로
+여기서는 위와 같은 문제가 발생하지 않지만
+기존의 stock_tmp 보다 stock_cus의 결과값이 더 좋게(?) 나오는 것을 확인할 수 있습니다.
+result_tmp10.txt와 result_cus10.txt에서 맨 마지막 부분을 보면
+result_sum : , mean(result_sum) : 에서 result_sum은 예측값과 실제값의 차이의 절대값 (부호 없이 스칼라값 즉 양만 다 더한것)
+인데 cus가 tmp보다 적게 나오니...
+
+위의 과정에서 어딘가 잘못되었거나 마지막에 성능 측정하는 방법이 잘못된 거 같은데
+잘 모르겠읍니다... ㅠ
+
+

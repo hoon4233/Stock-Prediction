@@ -1,0 +1,1174 @@
+Start samsung
+End load_stock_and_preprocessing !
+
+IN make_train_test_set 
+train_data X shape( BATCH_SIZE, WINDOW_SIZE, feature ) : (32, 20, 1)
+train_data Y shape( BATCH_SIZE, WINDOW_SIZE, feature ) : (32, 1)
+valid_data X shape( BATCH_SIZE, WINDOW_SIZE, feature ) : (32, 20, 1)
+valid_data Y shape( BATCH_SIZE, WINDOW_SIZE, feature ) : (32, 1)
+test_data X shape( BATCH_SIZE, WINDOW_SIZE, feature ) : (32, 20, 1)
+test_data Y shape( BATCH_SIZE, WINDOW_SIZE, feature ) : (32, 1)
+
+End make_train_test_set !
+
+IN make_model, print model <tensorflow.python.keras.engine.sequential.Sequential object at 0x7efcc0629f10>
+IN learning, print model <tensorflow.python.keras.engine.sequential.Sequential object at 0x7efcc0629f10>
+train_data X shape( BATCH_SIZE, WINDOW_SIZE, feature ) : (32, 20, 1)
+train_data Y shape( BATCH_SIZE, WINDOW_SIZE, feature ) : (32, 1)
+valid_data X shape( BATCH_SIZE, WINDOW_SIZE, feature ) : (32, 20, 1)
+valid_data Y shape( BATCH_SIZE, WINDOW_SIZE, feature ) : (32, 1)
+Epoch 1/50
+
+      1/Unknown - 31s 31s/step - loss: 0.0327 - mse: 0.0654
+9/9 [==============================] - 31s 81ms/step - loss: 0.0305 - mse: 0.0610 - val_loss: 0.0190 - val_mse: 0.0381
+
+Epoch 00001: val_loss improved from inf to 0.01905, saving model to ./model/models/005930/005930.ckpt
+Epoch 2/50
+
+1/9 [==>...........................] - ETA: 0s - loss: 0.0224 - mse: 0.0449
+9/9 [==============================] - 0s 8ms/step - loss: 0.0205 - mse: 0.0410 - val_loss: 0.0124 - val_mse: 0.0248
+
+Epoch 00002: val_loss improved from 0.01905 to 0.01242, saving model to ./model/models/005930/005930.ckpt
+Epoch 3/50
+
+1/9 [==>...........................] - ETA: 0s - loss: 0.0144 - mse: 0.0288
+9/9 [==============================] - 0s 9ms/step - loss: 0.0133 - mse: 0.0265 - val_loss: 0.0064 - val_mse: 0.0129
+
+Epoch 00003: val_loss improved from 0.01242 to 0.00643, saving model to ./model/models/005930/005930.ckpt
+Epoch 4/50
+
+1/9 [==>...........................] - ETA: 0s - loss: 0.0091 - mse: 0.0182
+9/9 [==============================] - 0s 8ms/step - loss: 0.0072 - mse: 0.0145 - val_loss: 0.0019 - val_mse: 0.0038
+
+Epoch 00004: val_loss improved from 0.00643 to 0.00191, saving model to ./model/models/005930/005930.ckpt
+Epoch 5/50
+
+1/9 [==>...........................] - ETA: 0s - loss: 0.0044 - mse: 0.0088
+9/9 [==============================] - 0s 7ms/step - loss: 0.0032 - mse: 0.0063 - val_loss: 6.6943e-04 - val_mse: 0.0013
+
+Epoch 00005: val_loss improved from 0.00191 to 0.00067, saving model to ./model/models/005930/005930.ckpt
+Epoch 6/50
+
+1/9 [==>...........................] - ETA: 0s - loss: 0.0026 - mse: 0.0052
+9/9 [==============================] - 0s 9ms/step - loss: 0.0021 - mse: 0.0043 - val_loss: 9.0062e-04 - val_mse: 0.0018
+
+Epoch 00006: val_loss did not improve from 0.00067
+Epoch 7/50
+
+1/9 [==>...........................] - ETA: 0s - loss: 0.0017 - mse: 0.0035
+9/9 [==============================] - 0s 8ms/step - loss: 0.0017 - mse: 0.0033 - val_loss: 6.0584e-04 - val_mse: 0.0012
+
+Epoch 00007: val_loss improved from 0.00067 to 0.00061, saving model to ./model/models/005930/005930.ckpt
+Epoch 8/50
+
+1/9 [==>...........................] - ETA: 0s - loss: 8.1798e-04 - mse: 0.0016
+9/9 [==============================] - 0s 8ms/step - loss: 0.0014 - mse: 0.0028 - val_loss: 6.1877e-04 - val_mse: 0.0012
+
+Epoch 00008: val_loss did not improve from 0.00061
+Epoch 9/50
+
+1/9 [==>...........................] - ETA: 0s - loss: 0.0016 - mse: 0.0031
+9/9 [==============================] - 0s 8ms/step - loss: 0.0013 - mse: 0.0026 - val_loss: 7.0479e-04 - val_mse: 0.0014
+
+Epoch 00009: val_loss did not improve from 0.00061
+Epoch 10/50
+
+1/9 [==>...........................] - ETA: 0s - loss: 0.0014 - mse: 0.0028
+9/9 [==============================] - 0s 10ms/step - loss: 0.0011 - mse: 0.0022 - val_loss: 7.3688e-04 - val_mse: 0.0015
+
+Epoch 00010: val_loss did not improve from 0.00061
+Epoch 11/50
+
+1/9 [==>...........................] - ETA: 0s - loss: 9.0127e-04 - mse: 0.0018
+9/9 [==============================] - 0s 8ms/step - loss: 8.5824e-04 - mse: 0.0017 - val_loss: 6.7879e-04 - val_mse: 0.0014
+
+Epoch 00011: val_loss did not improve from 0.00061
+Epoch 12/50
+
+1/9 [==>...........................] - ETA: 0s - loss: 9.1772e-04 - mse: 0.0018
+9/9 [==============================] - 0s 8ms/step - loss: 8.2995e-04 - mse: 0.0017 - val_loss: 6.9012e-04 - val_mse: 0.0014
+
+Epoch 00012: val_loss did not improve from 0.00061
+Epoch 13/50
+
+1/9 [==>...........................] - ETA: 0s - loss: 8.1802e-04 - mse: 0.0016
+9/9 [==============================] - 0s 8ms/step - loss: 7.1342e-04 - mse: 0.0014 - val_loss: 7.5853e-04 - val_mse: 0.0015
+
+Epoch 00013: val_loss did not improve from 0.00061
+Epoch 14/50
+
+1/9 [==>...........................] - ETA: 0s - loss: 8.1835e-04 - mse: 0.0016
+9/9 [==============================] - 0s 8ms/step - loss: 6.5123e-04 - mse: 0.0013 - val_loss: 7.1510e-04 - val_mse: 0.0014
+
+Epoch 00014: val_loss did not improve from 0.00061
+Epoch 15/50
+
+1/9 [==>...........................] - ETA: 0s - loss: 4.4585e-04 - mse: 8.9170e-04
+9/9 [==============================] - 0s 8ms/step - loss: 5.3901e-04 - mse: 0.0011 - val_loss: 7.4195e-04 - val_mse: 0.0015
+
+Epoch 00015: val_loss did not improve from 0.00061
+Epoch 16/50
+
+1/9 [==>...........................] - ETA: 0s - loss: 6.2361e-04 - mse: 0.0012
+9/9 [==============================] - 0s 8ms/step - loss: 5.3098e-04 - mse: 0.0011 - val_loss: 7.5543e-04 - val_mse: 0.0015
+
+Epoch 00016: val_loss did not improve from 0.00061
+Epoch 17/50
+
+1/9 [==>...........................] - ETA: 0s - loss: 5.9347e-04 - mse: 0.0012
+9/9 [==============================] - 0s 8ms/step - loss: 5.2708e-04 - mse: 0.0011 - val_loss: 7.5608e-04 - val_mse: 0.0015
+
+Epoch 00017: val_loss did not improve from 0.00061
+End learning !
+End make_model !
+
+End load_stock_and_preprocessing !
+
+005930 Start check_bias_variance !
+Test about train_set
+There is model
+End load_moodel !
+
+End prediction !
+
+len_ori : 330, len_pred : 330
+======= difference ======= 
+idx : 1, pred, ori : 0.154758 0.162465
+idx : 1, pred - ori : -0.007707
+idx : 2, pred, ori : 0.159773 0.166200
+idx : 2, pred - ori : -0.006426
+idx : 3, pred, ori : 0.164472 0.163399
+idx : 3, pred - ori : 0.001074
+idx : 4, pred, ori : 0.169002 0.137255
+idx : 4, pred - ori : 0.031747
+idx : 5, pred, ori : 0.172897 0.140990
+idx : 5, pred - ori : 0.031907
+idx : 6, pred, ori : 0.175538 0.160598
+idx : 6, pred - ori : 0.014940
+idx : 7, pred, ori : 0.178181 0.163399
+idx : 7, pred - ori : 0.014783
+idx : 8, pred, ori : 0.180405 0.187675
+idx : 8, pred - ori : -0.007270
+idx : 9, pred, ori : 0.181854 0.160598
+idx : 9, pred - ori : 0.021256
+idx : 10, pred, ori : 0.183515 0.163399
+idx : 10, pred - ori : 0.020117
+idx : 11, pred, ori : 0.185019 0.158730
+idx : 11, pred - ori : 0.026288
+idx : 12, pred, ori : 0.186625 0.176471
+idx : 12, pred - ori : 0.010155
+idx : 13, pred, ori : 0.188489 0.177404
+idx : 13, pred - ori : 0.011084
+idx : 14, pred, ori : 0.189727 0.181139
+idx : 14, pred - ori : 0.008588
+idx : 15, pred, ori : 0.190880 0.184874
+idx : 15, pred - ori : 0.006006
+idx : 16, pred, ori : 0.192103 0.173669
+idx : 16, pred - ori : 0.018434
+idx : 17, pred, ori : 0.193535 0.173669
+idx : 17, pred - ori : 0.019865
+idx : 18, pred, ori : 0.194497 0.142857
+idx : 18, pred - ori : 0.051640
+idx : 19, pred, ori : 0.195000 0.138189
+idx : 19, pred - ori : 0.056812
+idx : 20, pred, ori : 0.194614 0.126984
+idx : 20, pred - ori : 0.067630
+idx : 21, pred, ori : 0.193594 0.122316
+idx : 21, pred - ori : 0.071278
+idx : 22, pred, ori : 0.191942 0.130719
+idx : 22, pred - ori : 0.061223
+idx : 23, pred, ori : 0.189513 0.118581
+idx : 23, pred - ori : 0.070933
+idx : 24, pred, ori : 0.187064 0.115780
+idx : 24, pred - ori : 0.071284
+idx : 25, pred, ori : 0.184281 0.134454
+idx : 25, pred - ori : 0.049827
+idx : 26, pred, ori : 0.182005 0.119514
+idx : 26, pred - ori : 0.062490
+idx : 27, pred, ori : 0.180205 0.119514
+idx : 27, pred - ori : 0.060690
+idx : 28, pred, ori : 0.177952 0.126050
+idx : 28, pred - ori : 0.051901
+idx : 29, pred, ori : 0.176168 0.116713
+idx : 29, pred - ori : 0.059454
+idx : 30, pred, ori : 0.175132 0.120448
+idx : 30, pred - ori : 0.054684
+idx : 31, pred, ori : 0.173716 0.123249
+idx : 31, pred - ori : 0.050467
+idx : 32, pred, ori : 0.172739 0.156863
+idx : 32, pred - ori : 0.015876
+idx : 33, pred, ori : 0.172456 0.169935
+idx : 33, pred - ori : 0.002521
+idx : 34, pred, ori : 0.172820 0.150327
+idx : 34, pred - ori : 0.022493
+idx : 35, pred, ori : 0.173359 0.145658
+idx : 35, pred - ori : 0.027701
+idx : 36, pred, ori : 0.174087 0.147526
+idx : 36, pred - ori : 0.026561
+idx : 37, pred, ori : 0.175828 0.138189
+idx : 37, pred - ori : 0.037640
+idx : 38, pred, ori : 0.177452 0.134454
+idx : 38, pred - ori : 0.042998
+idx : 39, pred, ori : 0.178133 0.141923
+idx : 39, pred - ori : 0.036210
+idx : 40, pred, ori : 0.178622 0.154995
+idx : 40, pred - ori : 0.023627
+idx : 41, pred, ori : 0.179319 0.170868
+idx : 41, pred - ori : 0.008451
+idx : 42, pred, ori : 0.180009 0.177404
+idx : 42, pred - ori : 0.002604
+idx : 43, pred, ori : 0.180960 0.175537
+idx : 43, pred - ori : 0.005423
+idx : 44, pred, ori : 0.182378 0.171802
+idx : 44, pred - ori : 0.010576
+idx : 45, pred, ori : 0.184204 0.171802
+idx : 45, pred - ori : 0.012402
+idx : 46, pred, ori : 0.186193 0.172736
+idx : 46, pred - ori : 0.013458
+idx : 47, pred, ori : 0.188176 0.164332
+idx : 47, pred - ori : 0.023844
+idx : 48, pred, ori : 0.189701 0.175537
+idx : 48, pred - ori : 0.014164
+idx : 49, pred, ori : 0.190850 0.179272
+idx : 49, pred - ori : 0.011579
+idx : 50, pred, ori : 0.192168 0.183007
+idx : 50, pred - ori : 0.009161
+idx : 51, pred, ori : 0.193314 0.179272
+idx : 51, pred - ori : 0.014043
+idx : 52, pred, ori : 0.194197 0.152194
+idx : 52, pred - ori : 0.042003
+idx : 53, pred, ori : 0.194683 0.146592
+idx : 53, pred - ori : 0.048091
+idx : 54, pred, ori : 0.194528 0.147526
+idx : 54, pred - ori : 0.047002
+idx : 55, pred, ori : 0.194399 0.144725
+idx : 55, pred - ori : 0.049674
+idx : 56, pred, ori : 0.193806 0.136321
+idx : 56, pred - ori : 0.057485
+idx : 57, pred, ori : 0.192213 0.134454
+idx : 57, pred - ori : 0.057759
+idx : 58, pred, ori : 0.190417 0.138189
+idx : 58, pred - ori : 0.052228
+idx : 59, pred, ori : 0.188815 0.162465
+idx : 59, pred - ori : 0.026350
+idx : 60, pred, ori : 0.187629 0.156863
+idx : 60, pred - ori : 0.030766
+idx : 61, pred, ori : 0.186643 0.157796
+idx : 61, pred - ori : 0.028847
+idx : 62, pred, ori : 0.185674 0.146592
+idx : 62, pred - ori : 0.039082
+idx : 63, pred, ori : 0.185170 0.138189
+idx : 63, pred - ori : 0.046981
+idx : 64, pred, ori : 0.185022 0.126984
+idx : 64, pred - ori : 0.058038
+idx : 65, pred, ori : 0.184475 0.093371
+idx : 65, pred - ori : 0.091104
+idx : 66, pred, ori : 0.183177 0.101774
+idx : 66, pred - ori : 0.081403
+idx : 67, pred, ori : 0.181007 0.097106
+idx : 67, pred - ori : 0.083902
+idx : 68, pred, ori : 0.178861 0.097106
+idx : 68, pred - ori : 0.081756
+idx : 69, pred, ori : 0.176073 0.095238
+idx : 69, pred - ori : 0.080835
+idx : 70, pred, ori : 0.172660 0.076564
+idx : 70, pred - ori : 0.096096
+idx : 71, pred, ori : 0.169443 0.070028
+idx : 71, pred - ori : 0.099415
+idx : 72, pred, ori : 0.166060 0.084967
+idx : 72, pred - ori : 0.081092
+idx : 73, pred, ori : 0.163355 0.106443
+idx : 73, pred - ori : 0.056913
+idx : 74, pred, ori : 0.161549 0.112979
+idx : 74, pred - ori : 0.048571
+idx : 75, pred, ori : 0.159717 0.119514
+idx : 75, pred - ori : 0.040203
+idx : 76, pred, ori : 0.158387 0.098039
+idx : 76, pred - ori : 0.060348
+idx : 77, pred, ori : 0.157896 0.097106
+idx : 77, pred - ori : 0.060790
+idx : 78, pred, ori : 0.157860 0.095238
+idx : 78, pred - ori : 0.062622
+idx : 79, pred, ori : 0.158191 0.081232
+idx : 79, pred - ori : 0.076958
+idx : 80, pred, ori : 0.158072 0.095238
+idx : 80, pred - ori : 0.062834
+idx : 81, pred, ori : 0.157406 0.094304
+idx : 81, pred - ori : 0.063102
+idx : 82, pred, ori : 0.157021 0.118581
+idx : 82, pred - ori : 0.038440
+idx : 83, pred, ori : 0.156752 0.112045
+idx : 83, pred - ori : 0.044707
+idx : 84, pred, ori : 0.156612 0.120448
+idx : 84, pred - ori : 0.036164
+idx : 85, pred, ori : 0.156908 0.126050
+idx : 85, pred - ori : 0.030858
+idx : 86, pred, ori : 0.157930 0.137255
+idx : 86, pred - ori : 0.020675
+idx : 87, pred, ori : 0.159640 0.138189
+idx : 87, pred - ori : 0.021451
+idx : 88, pred, ori : 0.161371 0.133520
+idx : 88, pred - ori : 0.027851
+idx : 89, pred, ori : 0.163246 0.117647
+idx : 89, pred - ori : 0.045599
+idx : 90, pred, ori : 0.164886 0.122316
+idx : 90, pred - ori : 0.042570
+idx : 91, pred, ori : 0.166414 0.120448
+idx : 91, pred - ori : 0.045966
+idx : 92, pred, ori : 0.167811 0.128852
+idx : 92, pred - ori : 0.038960
+idx : 93, pred, ori : 0.168701 0.147526
+idx : 93, pred - ori : 0.021175
+idx : 94, pred, ori : 0.169358 0.150327
+idx : 94, pred - ori : 0.019031
+idx : 95, pred, ori : 0.170356 0.154062
+idx : 95, pred - ori : 0.016294
+idx : 96, pred, ori : 0.171372 0.150327
+idx : 96, pred - ori : 0.021045
+idx : 97, pred, ori : 0.172901 0.152194
+idx : 97, pred - ori : 0.020706
+idx : 98, pred, ori : 0.174777 0.154062
+idx : 98, pred - ori : 0.020715
+idx : 99, pred, ori : 0.176628 0.169001
+idx : 99, pred - ori : 0.007628
+idx : 100, pred, ori : 0.178613 0.178338
+idx : 100, pred - ori : 0.000275
+idx : 101, pred, ori : 0.180594 0.170868
+idx : 101, pred - ori : 0.009725
+idx : 102, pred, ori : 0.182500 0.164332
+idx : 102, pred - ori : 0.018168
+idx : 103, pred, ori : 0.184119 0.148459
+idx : 103, pred - ori : 0.035660
+idx : 104, pred, ori : 0.185688 0.159664
+idx : 104, pred - ori : 0.026024
+idx : 105, pred, ori : 0.187010 0.153128
+idx : 105, pred - ori : 0.033882
+idx : 106, pred, ori : 0.187981 0.129785
+idx : 106, pred - ori : 0.058196
+idx : 107, pred, ori : 0.187846 0.142857
+idx : 107, pred - ori : 0.044989
+idx : 108, pred, ori : 0.187029 0.151261
+idx : 108, pred - ori : 0.035769
+idx : 109, pred, ori : 0.186906 0.163399
+idx : 109, pred - ori : 0.023507
+idx : 110, pred, ori : 0.186690 0.165266
+idx : 110, pred - ori : 0.021424
+idx : 111, pred, ori : 0.186175 0.168067
+idx : 111, pred - ori : 0.018108
+idx : 112, pred, ori : 0.186336 0.175537
+idx : 112, pred - ori : 0.010799
+idx : 113, pred, ori : 0.187053 0.160598
+idx : 113, pred - ori : 0.026455
+idx : 114, pred, ori : 0.187969 0.161531
+idx : 114, pred - ori : 0.026438
+idx : 115, pred, ori : 0.188568 0.174603
+idx : 115, pred - ori : 0.013965
+idx : 116, pred, ori : 0.189483 0.182073
+idx : 116, pred - ori : 0.007410
+idx : 117, pred, ori : 0.190739 0.183940
+idx : 117, pred - ori : 0.006798
+idx : 118, pred, ori : 0.191555 0.167134
+idx : 118, pred - ori : 0.024422
+idx : 119, pred, ori : 0.192315 0.182073
+idx : 119, pred - ori : 0.010242
+idx : 120, pred, ori : 0.193202 0.181139
+idx : 120, pred - ori : 0.012063
+idx : 121, pred, ori : 0.194488 0.161531
+idx : 121, pred - ori : 0.032956
+idx : 122, pred, ori : 0.195194 0.169935
+idx : 122, pred - ori : 0.025260
+idx : 123, pred, ori : 0.195233 0.147526
+idx : 123, pred - ori : 0.047707
+idx : 124, pred, ori : 0.195519 0.144725
+idx : 124, pred - ori : 0.050795
+idx : 125, pred, ori : 0.194911 0.140056
+idx : 125, pred - ori : 0.054855
+idx : 126, pred, ori : 0.193794 0.121382
+idx : 126, pred - ori : 0.072412
+idx : 127, pred, ori : 0.192424 0.112979
+idx : 127, pred - ori : 0.079446
+idx : 128, pred, ori : 0.189930 0.107376
+idx : 128, pred - ori : 0.082554
+idx : 129, pred, ori : 0.187244 0.097106
+idx : 129, pred - ori : 0.090139
+idx : 130, pred, ori : 0.184184 0.106443
+idx : 130, pred - ori : 0.077741
+idx : 131, pred, ori : 0.180750 0.116713
+idx : 131, pred - ori : 0.064037
+idx : 132, pred, ori : 0.177760 0.103641
+idx : 132, pred - ori : 0.074119
+idx : 133, pred, ori : 0.174842 0.116713
+idx : 133, pred - ori : 0.058129
+idx : 134, pred, ori : 0.172136 0.120448
+idx : 134, pred - ori : 0.051687
+idx : 135, pred, ori : 0.170573 0.114846
+idx : 135, pred - ori : 0.055727
+idx : 136, pred, ori : 0.169335 0.130719
+idx : 136, pred - ori : 0.038616
+idx : 137, pred, ori : 0.168222 0.131653
+idx : 137, pred - ori : 0.036569
+idx : 138, pred, ori : 0.168105 0.123249
+idx : 138, pred - ori : 0.044856
+idx : 139, pred, ori : 0.168063 0.121382
+idx : 139, pred - ori : 0.046681
+idx : 140, pred, ori : 0.167880 0.114846
+idx : 140, pred - ori : 0.053034
+idx : 141, pred, ori : 0.168088 0.123249
+idx : 141, pred - ori : 0.044839
+idx : 142, pred, ori : 0.168293 0.125117
+idx : 142, pred - ori : 0.043177
+idx : 143, pred, ori : 0.168422 0.111111
+idx : 143, pred - ori : 0.057311
+idx : 144, pred, ori : 0.168282 0.122316
+idx : 144, pred - ori : 0.045967
+idx : 145, pred, ori : 0.167931 0.118581
+idx : 145, pred - ori : 0.049350
+idx : 146, pred, ori : 0.168093 0.108310
+idx : 146, pred - ori : 0.059783
+idx : 147, pred, ori : 0.167935 0.124183
+idx : 147, pred - ori : 0.043752
+idx : 148, pred, ori : 0.167577 0.154062
+idx : 148, pred - ori : 0.013516
+idx : 149, pred, ori : 0.168295 0.165266
+idx : 149, pred - ori : 0.003028
+idx : 150, pred, ori : 0.169397 0.176471
+idx : 150, pred - ori : -0.007073
+idx : 151, pred, ori : 0.170660 0.178338
+idx : 151, pred - ori : -0.007678
+idx : 152, pred, ori : 0.172986 0.181139
+idx : 152, pred - ori : -0.008153
+idx : 153, pred, ori : 0.176299 0.180205
+idx : 153, pred - ori : -0.003906
+idx : 154, pred, ori : 0.179760 0.176471
+idx : 154, pred - ori : 0.003289
+idx : 155, pred, ori : 0.183052 0.191410
+idx : 155, pred - ori : -0.008358
+idx : 156, pred, ori : 0.186163 0.218487
+idx : 156, pred - ori : -0.032325
+idx : 157, pred, ori : 0.189516 0.219421
+idx : 157, pred - ori : -0.029905
+idx : 158, pred, ori : 0.192856 0.221289
+idx : 158, pred - ori : -0.028433
+idx : 159, pred, ori : 0.195986 0.225023
+idx : 159, pred - ori : -0.029038
+idx : 160, pred, ori : 0.199676 0.213819
+idx : 160, pred - ori : -0.014143
+idx : 161, pred, ori : 0.203617 0.219421
+idx : 161, pred - ori : -0.015804
+idx : 162, pred, ori : 0.206898 0.204482
+idx : 162, pred - ori : 0.002417
+idx : 163, pred, ori : 0.209704 0.216620
+idx : 163, pred - ori : -0.006916
+idx : 164, pred, ori : 0.211949 0.212885
+idx : 164, pred - ori : -0.000936
+idx : 165, pred, ori : 0.213744 0.189542
+idx : 165, pred - ori : 0.024202
+idx : 166, pred, ori : 0.214780 0.197012
+idx : 166, pred - ori : 0.017768
+idx : 167, pred, ori : 0.214975 0.192344
+idx : 167, pred - ori : 0.022632
+idx : 168, pred, ori : 0.215367 0.213819
+idx : 168, pred - ori : 0.001548
+idx : 169, pred, ori : 0.215362 0.207283
+idx : 169, pred - ori : 0.008079
+idx : 170, pred, ori : 0.215011 0.218487
+idx : 170, pred - ori : -0.003477
+idx : 171, pred, ori : 0.214818 0.234360
+idx : 171, pred - ori : -0.019543
+idx : 172, pred, ori : 0.215213 0.236228
+idx : 172, pred - ori : -0.021015
+idx : 173, pred, ori : 0.216475 0.247432
+idx : 173, pred - ori : -0.030958
+idx : 174, pred, ori : 0.217824 0.243697
+idx : 174, pred - ori : -0.025873
+idx : 175, pred, ori : 0.219829 0.232493
+idx : 175, pred - ori : -0.012664
+idx : 176, pred, ori : 0.221841 0.239963
+idx : 176, pred - ori : -0.018122
+idx : 177, pred, ori : 0.223577 0.256769
+idx : 177, pred - ori : -0.033192
+idx : 178, pred, ori : 0.225767 0.256769
+idx : 178, pred - ori : -0.031002
+idx : 179, pred, ori : 0.227755 0.247432
+idx : 179, pred - ori : -0.019677
+idx : 180, pred, ori : 0.229122 0.251167
+idx : 180, pred - ori : -0.022045
+idx : 181, pred, ori : 0.230655 0.258637
+idx : 181, pred - ori : -0.027982
+idx : 182, pred, ori : 0.232601 0.254902
+idx : 182, pred - ori : -0.022301
+idx : 183, pred, ori : 0.234325 0.241830
+idx : 183, pred - ori : -0.007505
+idx : 184, pred, ori : 0.235266 0.241830
+idx : 184, pred - ori : -0.006564
+idx : 185, pred, ori : 0.235972 0.256769
+idx : 185, pred - ori : -0.020798
+idx : 186, pred, ori : 0.237036 0.277311
+idx : 186, pred - ori : -0.040274
+idx : 187, pred, ori : 0.238225 0.284781
+idx : 187, pred - ori : -0.046556
+idx : 188, pred, ori : 0.239332 0.295985
+idx : 188, pred - ori : -0.056653
+idx : 189, pred, ori : 0.240794 0.288515
+idx : 189, pred - ori : -0.047721
+idx : 190, pred, ori : 0.243035 0.273576
+idx : 190, pred - ori : -0.030541
+idx : 191, pred, ori : 0.245371 0.264239
+idx : 191, pred - ori : -0.018868
+idx : 192, pred, ori : 0.247235 0.282913
+idx : 192, pred - ori : -0.035678
+idx : 193, pred, ori : 0.249136 0.281046
+idx : 193, pred - ori : -0.031910
+idx : 194, pred, ori : 0.250682 0.286648
+idx : 194, pred - ori : -0.035966
+idx : 195, pred, ori : 0.251518 0.303455
+idx : 195, pred - ori : -0.051937
+idx : 196, pred, ori : 0.252545 0.299720
+idx : 196, pred - ori : -0.047175
+idx : 197, pred, ori : 0.254178 0.299720
+idx : 197, pred - ori : -0.045542
+idx : 198, pred, ori : 0.255530 0.271709
+idx : 198, pred - ori : -0.016179
+idx : 199, pred, ori : 0.256647 0.253035
+idx : 199, pred - ori : 0.003612
+idx : 200, pred, ori : 0.257233 0.264239
+idx : 200, pred - ori : -0.007006
+idx : 201, pred, ori : 0.257339 0.267974
+idx : 201, pred - ori : -0.010635
+idx : 202, pred, ori : 0.257247 0.267974
+idx : 202, pred - ori : -0.010727
+idx : 203, pred, ori : 0.256197 0.275444
+idx : 203, pred - ori : -0.019247
+idx : 204, pred, ori : 0.254971 0.258637
+idx : 204, pred - ori : -0.003665
+idx : 205, pred, ori : 0.254098 0.239963
+idx : 205, pred - ori : 0.014136
+idx : 206, pred, ori : 0.252739 0.241830
+idx : 206, pred - ori : 0.010909
+idx : 207, pred, ori : 0.251176 0.232493
+idx : 207, pred - ori : 0.018683
+idx : 208, pred, ori : 0.249642 0.224090
+idx : 208, pred - ori : 0.025552
+idx : 209, pred, ori : 0.247217 0.225023
+idx : 209, pred - ori : 0.022193
+idx : 210, pred, ori : 0.244440 0.241830
+idx : 210, pred - ori : 0.002610
+idx : 211, pred, ori : 0.242235 0.256769
+idx : 211, pred - ori : -0.014534
+idx : 212, pred, ori : 0.240506 0.262372
+idx : 212, pred - ori : -0.021866
+idx : 213, pred, ori : 0.239077 0.269841
+idx : 213, pred - ori : -0.030764
+idx : 214, pred, ori : 0.238430 0.295985
+idx : 214, pred - ori : -0.057555
+idx : 215, pred, ori : 0.239169 0.322129
+idx : 215, pred - ori : -0.082960
+idx : 216, pred, ori : 0.241232 0.322129
+idx : 216, pred - ori : -0.080897
+idx : 217, pred, ori : 0.244006 0.359477
+idx : 217, pred - ori : -0.115472
+idx : 218, pred, ori : 0.247760 0.352007
+idx : 218, pred - ori : -0.104247
+idx : 219, pred, ori : 0.253092 0.346405
+idx : 219, pred - ori : -0.093313
+idx : 220, pred, ori : 0.258605 0.346405
+idx : 220, pred - ori : -0.087800
+idx : 221, pred, ori : 0.263828 0.337068
+idx : 221, pred - ori : -0.073240
+idx : 222, pred, ori : 0.269144 0.327731
+idx : 222, pred - ori : -0.058587
+idx : 223, pred, ori : 0.273127 0.335201
+idx : 223, pred - ori : -0.062074
+idx : 224, pred, ori : 0.276220 0.355742
+idx : 224, pred - ori : -0.079523
+idx : 225, pred, ori : 0.279196 0.342670
+idx : 225, pred - ori : -0.063474
+idx : 226, pred, ori : 0.281556 0.331466
+idx : 226, pred - ori : -0.049909
+idx : 227, pred, ori : 0.282973 0.337068
+idx : 227, pred - ori : -0.054096
+idx : 228, pred, ori : 0.284435 0.337068
+idx : 228, pred - ori : -0.052633
+idx : 229, pred, ori : 0.286171 0.342670
+idx : 229, pred - ori : -0.056499
+idx : 230, pred, ori : 0.287228 0.361345
+idx : 230, pred - ori : -0.074117
+idx : 231, pred, ori : 0.288147 0.394958
+idx : 231, pred - ori : -0.106811
+idx : 232, pred, ori : 0.289796 0.411765
+idx : 232, pred - ori : -0.121969
+idx : 233, pred, ori : 0.292214 0.421102
+idx : 233, pred - ori : -0.128888
+idx : 234, pred, ori : 0.295370 0.421102
+idx : 234, pred - ori : -0.125731
+idx : 235, pred, ori : 0.299442 0.402428
+idx : 235, pred - ori : -0.102986
+idx : 236, pred, ori : 0.303953 0.434174
+idx : 236, pred - ori : -0.130220
+idx : 237, pred, ori : 0.308662 0.445378
+idx : 237, pred - ori : -0.136716
+idx : 238, pred, ori : 0.313588 0.465920
+idx : 238, pred - ori : -0.152332
+idx : 239, pred, ori : 0.318183 0.447246
+idx : 239, pred - ori : -0.129063
+idx : 240, pred, ori : 0.322197 0.464052
+idx : 240, pred - ori : -0.141855
+idx : 241, pred, ori : 0.326882 0.436041
+idx : 241, pred - ori : -0.109159
+idx : 242, pred, ori : 0.331228 0.398693
+idx : 242, pred - ori : -0.067465
+idx : 243, pred, ori : 0.334093 0.404295
+idx : 243, pred - ori : -0.070202
+idx : 244, pred, ori : 0.335801 0.368814
+idx : 244, pred - ori : -0.033013
+idx : 245, pred, ori : 0.336401 0.353875
+idx : 245, pred - ori : -0.017474
+idx : 246, pred, ori : 0.334705 0.368814
+idx : 246, pred - ori : -0.034109
+idx : 247, pred, ori : 0.332108 0.400560
+idx : 247, pred - ori : -0.068452
+idx : 248, pred, ori : 0.329913 0.411765
+idx : 248, pred - ori : -0.081851
+idx : 249, pred, ori : 0.327560 0.441643
+idx : 249, pred - ori : -0.114083
+idx : 250, pred, ori : 0.325932 0.428571
+idx : 250, pred - ori : -0.102640
+idx : 251, pred, ori : 0.325780 0.415500
+idx : 251, pred - ori : -0.089720
+idx : 252, pred, ori : 0.326406 0.419234
+idx : 252, pred - ori : -0.092828
+idx : 253, pred, ori : 0.327494 0.430439
+idx : 253, pred - ori : -0.102945
+idx : 254, pred, ori : 0.329334 0.434174
+idx : 254, pred - ori : -0.104840
+idx : 255, pred, ori : 0.330804 0.454715
+idx : 255, pred - ori : -0.123912
+idx : 256, pred, ori : 0.332215 0.449113
+idx : 256, pred - ori : -0.116898
+idx : 257, pred, ori : 0.333901 0.417367
+idx : 257, pred - ori : -0.083466
+idx : 258, pred, ori : 0.335007 0.424837
+idx : 258, pred - ori : -0.089830
+idx : 259, pred, ori : 0.335971 0.421102
+idx : 259, pred - ori : -0.085131
+idx : 260, pred, ori : 0.337300 0.406162
+idx : 260, pred - ori : -0.068862
+idx : 261, pred, ori : 0.337397 0.361345
+idx : 261, pred - ori : -0.023947
+idx : 262, pred, ori : 0.335650 0.381886
+idx : 262, pred - ori : -0.046236
+idx : 263, pred, ori : 0.334027 0.355742
+idx : 263, pred - ori : -0.021715
+idx : 264, pred, ori : 0.332004 0.344538
+idx : 264, pred - ori : -0.012534
+idx : 265, pred, ori : 0.328595 0.312792
+idx : 265, pred - ori : 0.015803
+idx : 266, pred, ori : 0.323856 0.327731
+idx : 266, pred - ori : -0.003875
+idx : 267, pred, ori : 0.319415 0.335201
+idx : 267, pred - ori : -0.015785
+idx : 268, pred, ori : 0.314825 0.372549
+idx : 268, pred - ori : -0.057724
+idx : 269, pred, ori : 0.310717 0.380019
+idx : 269, pred - ori : -0.069302
+idx : 270, pred, ori : 0.307033 0.355742
+idx : 270, pred - ori : -0.048709
+idx : 271, pred, ori : 0.304514 0.312792
+idx : 271, pred - ori : -0.008278
+idx : 272, pred, ori : 0.301917 0.320261
+idx : 272, pred - ori : -0.018344
+idx : 273, pred, ori : 0.300325 0.273576
+idx : 273, pred - ori : 0.026749
+idx : 274, pred, ori : 0.298184 0.249300
+idx : 274, pred - ori : 0.048884
+idx : 275, pred, ori : 0.293705 0.233427
+idx : 275, pred - ori : 0.060278
+idx : 276, pred, ori : 0.287798 0.213819
+idx : 276, pred - ori : 0.073979
+idx : 277, pred, ori : 0.281447 0.183940
+idx : 277, pred - ori : 0.097507
+idx : 278, pred, ori : 0.273437 0.152194
+idx : 278, pred - ori : 0.121243
+idx : 279, pred, ori : 0.264236 0.102708
+idx : 279, pred - ori : 0.161528
+idx : 280, pred, ori : 0.253937 0.148459
+idx : 280, pred - ori : 0.105478
+idx : 281, pred, ori : 0.243679 0.094304
+idx : 281, pred - ori : 0.149374
+idx : 282, pred, ori : 0.233673 0.177404
+idx : 282, pred - ori : 0.056269
+idx : 283, pred, ori : 0.223504 0.209150
+idx : 283, pred - ori : 0.014354
+idx : 284, pred, ori : 0.215834 0.193277
+idx : 284, pred - ori : 0.022557
+idx : 285, pred, ori : 0.210461 0.202614
+idx : 285, pred - ori : 0.007846
+idx : 286, pred, ori : 0.205620 0.194211
+idx : 286, pred - ori : 0.011409
+idx : 287, pred, ori : 0.204819 0.192344
+idx : 287, pred - ori : 0.012475
+idx : 288, pred, ori : 0.204798 0.155929
+idx : 288, pred - ori : 0.048869
+idx : 289, pred, ori : 0.203934 0.174603
+idx : 289, pred - ori : 0.029331
+idx : 290, pred, ori : 0.202920 0.178338
+idx : 290, pred - ori : 0.024582
+idx : 291, pred, ori : 0.202402 0.210084
+idx : 291, pred - ori : -0.007682
+idx : 292, pred, ori : 0.202149 0.226891
+idx : 292, pred - ori : -0.024742
+idx : 293, pred, ori : 0.201850 0.208217
+idx : 293, pred - ori : -0.006366
+idx : 294, pred, ori : 0.202571 0.217554
+idx : 294, pred - ori : -0.014983
+idx : 295, pred, ori : 0.203720 0.220355
+idx : 295, pred - ori : -0.016635
+idx : 296, pred, ori : 0.206168 0.202614
+idx : 296, pred - ori : 0.003553
+idx : 297, pred, ori : 0.208433 0.215686
+idx : 297, pred - ori : -0.007253
+idx : 298, pred, ori : 0.209994 0.215686
+idx : 298, pred - ori : -0.005692
+idx : 299, pred, ori : 0.211988 0.260504
+idx : 299, pred - ori : -0.048517
+idx : 300, pred, ori : 0.214368 0.236228
+idx : 300, pred - ori : -0.021859
+idx : 301, pred, ori : 0.216422 0.220355
+idx : 301, pred - ori : -0.003932
+idx : 302, pred, ori : 0.218230 0.231559
+idx : 302, pred - ori : -0.013329
+idx : 303, pred, ori : 0.219822 0.231559
+idx : 303, pred - ori : -0.011737
+idx : 304, pred, ori : 0.222250 0.222222
+idx : 304, pred - ori : 0.000027
+idx : 305, pred, ori : 0.223448 0.231559
+idx : 305, pred - ori : -0.008111
+idx : 306, pred, ori : 0.224003 0.236228
+idx : 306, pred - ori : -0.012225
+idx : 307, pred, ori : 0.225031 0.234360
+idx : 307, pred - ori : -0.009330
+idx : 308, pred, ori : 0.225865 0.206349
+idx : 308, pred - ori : 0.019516
+idx : 309, pred, ori : 0.226107 0.219421
+idx : 309, pred - ori : 0.006686
+idx : 310, pred, ori : 0.226129 0.211951
+idx : 310, pred - ori : 0.014177
+idx : 311, pred, ori : 0.226346 0.211951
+idx : 311, pred - ori : 0.014394
+idx : 312, pred, ori : 0.225829 0.204482
+idx : 312, pred - ori : 0.021347
+idx : 313, pred, ori : 0.224543 0.195145
+idx : 313, pred - ori : 0.029398
+idx : 314, pred, ori : 0.223389 0.207283
+idx : 314, pred - ori : 0.016106
+idx : 315, pred, ori : 0.222099 0.197012
+idx : 315, pred - ori : 0.025087
+idx : 316, pred, ori : 0.220942 0.194211
+idx : 316, pred - ori : 0.026731
+idx : 317, pred, ori : 0.219442 0.211951
+idx : 317, pred - ori : 0.007491
+idx : 318, pred, ori : 0.218149 0.239963
+idx : 318, pred - ori : -0.021813
+idx : 319, pred, ori : 0.217961 0.234360
+idx : 319, pred - ori : -0.016399
+idx : 320, pred, ori : 0.217772 0.233427
+idx : 320, pred - ori : -0.015654
+idx : 321, pred, ori : 0.217927 0.211018
+idx : 321, pred - ori : 0.006909
+idx : 322, pred, ori : 0.218763 0.212885
+idx : 322, pred - ori : 0.005877
+idx : 323, pred, ori : 0.219772 0.220355
+idx : 323, pred - ori : -0.000583
+idx : 324, pred, ori : 0.220689 0.232493
+idx : 324, pred - ori : -0.011804
+idx : 325, pred, ori : 0.221569 0.241830
+idx : 325, pred - ori : -0.020261
+idx : 326, pred, ori : 0.221968 0.247432
+idx : 326, pred - ori : -0.025464
+idx : 327, pred, ori : 0.222715 0.256769
+idx : 327, pred - ori : -0.034054
+idx : 328, pred, ori : 0.224041 0.260504
+idx : 328, pred - ori : -0.036463
+idx : 329, pred, ori : 0.226085 0.318394
+idx : 329, pred - ori : -0.092309
+idx : 330, pred, ori : 0.229045 0.320261
+idx : 330, pred - ori : -0.091216
+result_sum : 13.440725, mean(result_sum) : 0.040729
+benefit : 137
+
+ End check_performance !
+
+Test about test_set
+There is model
+End load_moodel !
+
+End prediction !
+
+len_ori : 180, len_pred : 180
+======= difference ======= 
+idx : 1, pred, ori : 0.257200 0.301587
+idx : 1, pred - ori : -0.044387
+idx : 2, pred, ori : 0.257414 0.327731
+idx : 2, pred - ori : -0.070317
+idx : 3, pred, ori : 0.258412 0.297852
+idx : 3, pred - ori : -0.039441
+idx : 4, pred, ori : 0.259352 0.290383
+idx : 4, pred - ori : -0.031031
+idx : 5, pred, ori : 0.259961 0.286648
+idx : 5, pred - ori : -0.026687
+idx : 6, pred, ori : 0.261019 0.284781
+idx : 6, pred - ori : -0.023762
+idx : 7, pred, ori : 0.262369 0.297852
+idx : 7, pred - ori : -0.035484
+idx : 8, pred, ori : 0.262953 0.305322
+idx : 8, pred - ori : -0.042369
+idx : 9, pred, ori : 0.263341 0.322129
+idx : 9, pred - ori : -0.058788
+idx : 10, pred, ori : 0.263829 0.305322
+idx : 10, pred - ori : -0.041493
+idx : 11, pred, ori : 0.264475 0.316527
+idx : 11, pred - ori : -0.052052
+idx : 12, pred, ori : 0.265411 0.312792
+idx : 12, pred - ori : -0.047381
+idx : 13, pred, ori : 0.266852 0.333333
+idx : 13, pred - ori : -0.066481
+idx : 14, pred, ori : 0.268703 0.322129
+idx : 14, pred - ori : -0.053426
+idx : 15, pred, ori : 0.270094 0.310924
+idx : 15, pred - ori : -0.040831
+idx : 16, pred, ori : 0.271333 0.312792
+idx : 16, pred - ori : -0.041458
+idx : 17, pred, ori : 0.272225 0.338936
+idx : 17, pred - ori : -0.066710
+idx : 18, pred, ori : 0.273912 0.394958
+idx : 18, pred - ori : -0.121046
+idx : 19, pred, ori : 0.276109 0.402428
+idx : 19, pred - ori : -0.126319
+idx : 20, pred, ori : 0.278972 0.402428
+idx : 20, pred - ori : -0.123455
+idx : 21, pred, ori : 0.282320 0.381886
+idx : 21, pred - ori : -0.099566
+idx : 22, pred, ori : 0.286531 0.361345
+idx : 22, pred - ori : -0.074814
+idx : 23, pred, ori : 0.291220 0.370682
+idx : 23, pred - ori : -0.079462
+idx : 24, pred, ori : 0.295449 0.363212
+idx : 24, pred - ori : -0.067762
+idx : 25, pred, ori : 0.298870 0.383754
+idx : 25, pred - ori : -0.084884
+idx : 26, pred, ori : 0.301115 0.374416
+idx : 26, pred - ori : -0.073301
+idx : 27, pred, ori : 0.302728 0.380019
+idx : 27, pred - ori : -0.077290
+idx : 28, pred, ori : 0.304056 0.387488
+idx : 28, pred - ori : -0.083432
+idx : 29, pred, ori : 0.305348 0.402428
+idx : 29, pred - ori : -0.097079
+idx : 30, pred, ori : 0.307173 0.396825
+idx : 30, pred - ori : -0.089652
+idx : 31, pred, ori : 0.308831 0.383754
+idx : 31, pred - ori : -0.074922
+idx : 32, pred, ori : 0.310256 0.391223
+idx : 32, pred - ori : -0.080967
+idx : 33, pred, ori : 0.311730 0.380019
+idx : 33, pred - ori : -0.068289
+idx : 34, pred, ori : 0.313187 0.335201
+idx : 34, pred - ori : -0.022014
+idx : 35, pred, ori : 0.313079 0.344538
+idx : 35, pred - ori : -0.031458
+idx : 36, pred, ori : 0.312206 0.348273
+idx : 36, pred - ori : -0.036067
+idx : 37, pred, ori : 0.311485 0.353875
+idx : 37, pred - ori : -0.042390
+idx : 38, pred, ori : 0.309970 0.353875
+idx : 38, pred - ori : -0.043905
+idx : 39, pred, ori : 0.307335 0.338936
+idx : 39, pred - ori : -0.031600
+idx : 40, pred, ori : 0.305011 0.335201
+idx : 40, pred - ori : -0.030190
+idx : 41, pred, ori : 0.302782 0.309057
+idx : 41, pred - ori : -0.006275
+idx : 42, pred, ori : 0.300580 0.312792
+idx : 42, pred - ori : -0.012212
+idx : 43, pred, ori : 0.298096 0.316527
+idx : 43, pred - ori : -0.018431
+idx : 44, pred, ori : 0.295502 0.353875
+idx : 44, pred - ori : -0.058373
+idx : 45, pred, ori : 0.293471 0.338936
+idx : 45, pred - ori : -0.045464
+idx : 46, pred, ori : 0.291326 0.355742
+idx : 46, pred - ori : -0.064416
+idx : 47, pred, ori : 0.289825 0.396825
+idx : 47, pred - ori : -0.107001
+idx : 48, pred, ori : 0.290050 0.391223
+idx : 48, pred - ori : -0.101174
+idx : 49, pred, ori : 0.291921 0.406162
+idx : 49, pred - ori : -0.114242
+idx : 50, pred, ori : 0.293705 0.402428
+idx : 50, pred - ori : -0.108722
+idx : 51, pred, ori : 0.296734 0.428571
+idx : 51, pred - ori : -0.131837
+idx : 52, pred, ori : 0.301036 0.439776
+idx : 52, pred - ori : -0.138740
+idx : 53, pred, ori : 0.305456 0.439776
+idx : 53, pred - ori : -0.134320
+idx : 54, pred, ori : 0.310103 0.411765
+idx : 54, pred - ori : -0.101662
+idx : 55, pred, ori : 0.314155 0.408030
+idx : 55, pred - ori : -0.093875
+idx : 56, pred, ori : 0.317999 0.406162
+idx : 56, pred - ori : -0.088164
+idx : 57, pred, ori : 0.321453 0.387488
+idx : 57, pred - ori : -0.066035
+idx : 58, pred, ori : 0.323541 0.394958
+idx : 58, pred - ori : -0.071417
+idx : 59, pred, ori : 0.324286 0.380019
+idx : 59, pred - ori : -0.055732
+idx : 60, pred, ori : 0.324539 0.381886
+idx : 60, pred - ori : -0.057347
+idx : 61, pred, ori : 0.324094 0.387488
+idx : 61, pred - ori : -0.063394
+idx : 62, pred, ori : 0.323407 0.387488
+idx : 62, pred - ori : -0.064082
+idx : 63, pred, ori : 0.322801 0.396825
+idx : 63, pred - ori : -0.074024
+idx : 64, pred, ori : 0.321967 0.402428
+idx : 64, pred - ori : -0.080461
+idx : 65, pred, ori : 0.321452 0.419234
+idx : 65, pred - ori : -0.097782
+idx : 66, pred, ori : 0.321587 0.415500
+idx : 66, pred - ori : -0.093912
+idx : 67, pred, ori : 0.322073 0.428571
+idx : 67, pred - ori : -0.106498
+idx : 68, pred, ori : 0.322943 0.437908
+idx : 68, pred - ori : -0.114965
+idx : 69, pred, ori : 0.324544 0.437908
+idx : 69, pred - ori : -0.113364
+idx : 70, pred, ori : 0.326604 0.421102
+idx : 70, pred - ori : -0.094497
+idx : 71, pred, ori : 0.328274 0.411765
+idx : 71, pred - ori : -0.083491
+idx : 72, pred, ori : 0.329651 0.421102
+idx : 72, pred - ori : -0.091451
+idx : 73, pred, ori : 0.331036 0.437908
+idx : 73, pred - ori : -0.106872
+idx : 74, pred, ori : 0.332430 0.437908
+idx : 74, pred - ori : -0.105479
+idx : 75, pred, ori : 0.333464 0.422969
+idx : 75, pred - ori : -0.089505
+idx : 76, pred, ori : 0.333997 0.424837
+idx : 76, pred - ori : -0.090840
+idx : 77, pred, ori : 0.334724 0.428571
+idx : 77, pred - ori : -0.093848
+idx : 78, pred, ori : 0.335893 0.417367
+idx : 78, pred - ori : -0.081473
+idx : 79, pred, ori : 0.336529 0.402428
+idx : 79, pred - ori : -0.065899
+idx : 80, pred, ori : 0.336304 0.385621
+idx : 80, pred - ori : -0.049316
+idx : 81, pred, ori : 0.335557 0.357610
+idx : 81, pred - ori : -0.022053
+idx : 82, pred, ori : 0.333930 0.372549
+idx : 82, pred - ori : -0.038619
+idx : 83, pred, ori : 0.331710 0.398693
+idx : 83, pred - ori : -0.066983
+idx : 84, pred, ori : 0.329606 0.393091
+idx : 84, pred - ori : -0.063485
+idx : 85, pred, ori : 0.327279 0.426704
+idx : 85, pred - ori : -0.099425
+idx : 86, pred, ori : 0.325024 0.422969
+idx : 86, pred - ori : -0.097945
+idx : 87, pred, ori : 0.324474 0.424837
+idx : 87, pred - ori : -0.100363
+idx : 88, pred, ori : 0.324761 0.424837
+idx : 88, pred - ori : -0.100075
+idx : 89, pred, ori : 0.325449 0.445378
+idx : 89, pred - ori : -0.119929
+idx : 90, pred, ori : 0.327358 0.439776
+idx : 90, pred - ori : -0.112418
+idx : 91, pred, ori : 0.329390 0.480859
+idx : 91, pred - ori : -0.151469
+idx : 92, pred, ori : 0.331850 0.538749
+idx : 92, pred - ori : -0.206899
+idx : 93, pred, ori : 0.335707 0.527544
+idx : 93, pred - ori : -0.191837
+idx : 94, pred, ori : 0.340546 0.510738
+idx : 94, pred - ori : -0.170192
+idx : 95, pred, ori : 0.345093 0.507003
+idx : 95, pred - ori : -0.161910
+idx : 96, pred, ori : 0.350980 0.508870
+idx : 96, pred - ori : -0.157890
+idx : 97, pred, ori : 0.357440 0.561158
+idx : 97, pred - ori : -0.203718
+idx : 98, pred, ori : 0.363405 0.564893
+idx : 98, pred - ori : -0.201488
+idx : 99, pred, ori : 0.368733 0.544351
+idx : 99, pred - ori : -0.175618
+idx : 100, pred, ori : 0.373317 0.570495
+idx : 100, pred - ori : -0.197177
+idx : 101, pred, ori : 0.378437 0.574230
+idx : 101, pred - ori : -0.195793
+idx : 102, pred, ori : 0.384651 0.546218
+idx : 102, pred - ori : -0.161568
+idx : 103, pred, ori : 0.389350 0.566760
+idx : 103, pred - ori : -0.177410
+idx : 104, pred, ori : 0.393122 0.598506
+idx : 104, pred - ori : -0.205384
+idx : 105, pred, ori : 0.397717 0.602241
+idx : 105, pred - ori : -0.204524
+idx : 106, pred, ori : 0.401516 0.635854
+idx : 106, pred - ori : -0.234339
+idx : 107, pred, ori : 0.405477 0.661998
+idx : 107, pred - ori : -0.256521
+idx : 108, pred, ori : 0.410769 0.639589
+idx : 108, pred - ori : -0.228821
+idx : 109, pred, ori : 0.416225 0.680672
+idx : 109, pred - ori : -0.264447
+idx : 110, pred, ori : 0.422214 0.661998
+idx : 110, pred - ori : -0.239784
+idx : 111, pred, ori : 0.428630 0.671335
+idx : 111, pred - ori : -0.242705
+idx : 112, pred, ori : 0.434522 0.678805
+idx : 112, pred - ori : -0.244283
+idx : 113, pred, ori : 0.439573 0.678805
+idx : 113, pred - ori : -0.239232
+idx : 114, pred, ori : 0.444614 0.678805
+idx : 114, pred - ori : -0.234191
+idx : 115, pred, ori : 0.448949 0.669468
+idx : 115, pred - ori : -0.220519
+idx : 116, pred, ori : 0.452661 0.663866
+idx : 116, pred - ori : -0.211205
+idx : 117, pred, ori : 0.455721 0.663866
+idx : 117, pred - ori : -0.208145
+idx : 118, pred, ori : 0.458006 0.650794
+idx : 118, pred - ori : -0.192787
+idx : 119, pred, ori : 0.459428 0.680672
+idx : 119, pred - ori : -0.221244
+idx : 120, pred, ori : 0.460795 0.753501
+idx : 120, pred - ori : -0.292707
+idx : 121, pred, ori : 0.462837 0.770308
+idx : 121, pred - ori : -0.307471
+idx : 122, pred, ori : 0.465545 0.762838
+idx : 122, pred - ori : -0.297293
+idx : 123, pred, ori : 0.469240 0.813259
+idx : 123, pred - ori : -0.344018
+idx : 124, pred, ori : 0.475048 0.850607
+idx : 124, pred - ori : -0.375559
+idx : 125, pred, ori : 0.482768 0.867414
+idx : 125, pred - ori : -0.384646
+idx : 126, pred, ori : 0.490837 0.835668
+idx : 126, pred - ori : -0.344831
+idx : 127, pred, ori : 0.498378 0.848739
+idx : 127, pred - ori : -0.350361
+idx : 128, pred, ori : 0.506511 0.958917
+idx : 128, pred - ori : -0.452406
+idx : 129, pred, ori : 0.515935 1.000000
+idx : 129, pred - ori : -0.484065
+idx : 130, pred, ori : 0.524760 0.992530
+idx : 130, pred - ori : -0.467770
+idx : 131, pred, ori : 0.534132 0.975724
+idx : 131, pred - ori : -0.441591
+idx : 132, pred, ori : 0.543644 0.975724
+idx : 132, pred - ori : -0.432080
+idx : 133, pred, ori : 0.554396 0.943978
+idx : 133, pred - ori : -0.389582
+idx : 134, pred, ori : 0.562972 0.887955
+idx : 134, pred - ori : -0.324983
+idx : 135, pred, ori : 0.568969 0.925303
+idx : 135, pred - ori : -0.356335
+idx : 136, pred, ori : 0.573954 0.929038
+idx : 136, pred - ori : -0.355084
+idx : 137, pred, ori : 0.576819 0.945845
+idx : 137, pred - ori : -0.369026
+idx : 138, pred, ori : 0.578795 0.921569
+idx : 138, pred - ori : -0.342773
+idx : 139, pred, ori : 0.579698 0.970121
+idx : 139, pred - ori : -0.390423
+idx : 140, pred, ori : 0.581444 0.919701
+idx : 140, pred - ori : -0.338257
+idx : 141, pred, ori : 0.581946 0.899160
+idx : 141, pred - ori : -0.317214
+idx : 142, pred, ori : 0.582357 0.863679
+idx : 142, pred - ori : -0.281321
+idx : 143, pred, ori : 0.581612 0.831933
+idx : 143, pred - ori : -0.250321
+idx : 144, pred, ori : 0.579782 0.850607
+idx : 144, pred - ori : -0.270825
+idx : 145, pred, ori : 0.577498 0.876751
+idx : 145, pred - ori : -0.299252
+idx : 146, pred, ori : 0.574437 0.880486
+idx : 146, pred - ori : -0.306048
+idx : 147, pred, ori : 0.571286 0.841270
+idx : 147, pred - ori : -0.269984
+idx : 148, pred, ori : 0.567955 0.859944
+idx : 148, pred - ori : -0.291989
+idx : 149, pred, ori : 0.565225 0.850607
+idx : 149, pred - ori : -0.285382
+idx : 150, pred, ori : 0.562713 0.845005
+idx : 150, pred - ori : -0.282292
+idx : 151, pred, ori : 0.560421 0.824463
+idx : 151, pred - ori : -0.264042
+idx : 152, pred, ori : 0.557836 0.873016
+idx : 152, pred - ori : -0.315180
+idx : 153, pred, ori : 0.556159 0.886088
+idx : 153, pred - ori : -0.329929
+idx : 154, pred, ori : 0.554913 0.854342
+idx : 154, pred - ori : -0.299429
+idx : 155, pred, ori : 0.553882 0.833800
+idx : 155, pred - ori : -0.279918
+idx : 156, pred, ori : 0.552702 0.843137
+idx : 156, pred - ori : -0.290435
+idx : 157, pred, ori : 0.552393 0.835668
+idx : 157, pred - ori : -0.283274
+idx : 158, pred, ori : 0.551629 0.831933
+idx : 158, pred - ori : -0.280303
+idx : 159, pred, ori : 0.550557 0.831933
+idx : 159, pred - ori : -0.281376
+idx : 160, pred, ori : 0.548982 0.893557
+idx : 160, pred - ori : -0.344575
+idx : 161, pred, ori : 0.548537 0.841270
+idx : 161, pred - ori : -0.292733
+idx : 162, pred, ori : 0.547549 0.861811
+idx : 162, pred - ori : -0.314262
+idx : 163, pred, ori : 0.547780 0.869281
+idx : 163, pred - ori : -0.321501
+idx : 164, pred, ori : 0.548540 0.839402
+idx : 164, pred - ori : -0.290862
+idx : 165, pred, ori : 0.548849 0.833800
+idx : 165, pred - ori : -0.284951
+idx : 166, pred, ori : 0.548856 0.831933
+idx : 166, pred - ori : -0.283076
+idx : 167, pred, ori : 0.548592 0.820728
+idx : 167, pred - ori : -0.272136
+idx : 168, pred, ori : 0.547941 0.811391
+idx : 168, pred - ori : -0.263451
+idx : 169, pred, ori : 0.546731 0.831933
+idx : 169, pred - ori : -0.285202
+idx : 170, pred, ori : 0.545611 0.846872
+idx : 170, pred - ori : -0.301261
+idx : 171, pred, ori : 0.544601 0.828198
+idx : 171, pred - ori : -0.283597
+idx : 172, pred, ori : 0.543505 0.846872
+idx : 172, pred - ori : -0.303367
+idx : 173, pred, ori : 0.542937 0.837535
+idx : 173, pred - ori : -0.294598
+idx : 174, pred, ori : 0.542538 0.848739
+idx : 174, pred - ori : -0.306201
+idx : 175, pred, ori : 0.542777 0.830065
+idx : 175, pred - ori : -0.287288
+idx : 176, pred, ori : 0.542748 0.831933
+idx : 176, pred - ori : -0.289185
+idx : 177, pred, ori : 0.542833 0.828198
+idx : 177, pred - ori : -0.285365
+idx : 178, pred, ori : 0.542763 0.813259
+idx : 178, pred - ori : -0.270495
+idx : 179, pred, ori : 0.542285 0.816993
+idx : 179, pred - ori : -0.274708
+idx : 180, pred, ori : 0.541719 0.822596
+idx : 180, pred - ori : -0.280877
+result_sum : 32.050419, mean(result_sum) : 0.178058
+benefit : 180
+
+ End check_performance !
+
+Finish samsung

@@ -1,0 +1,102 @@
+Start samsung
+End load_stock_and_preprocessing !
+
+data shape : (1, 20, 1)
+
+End make_data_for_tomorrow !
+
+There is model
+End load_moodel !
+
+End prediction !
+
+[[80991.734]]
+[[80991.734]]
+Finish samsung 
+
+
+Start sk
+End load_stock_and_preprocessing !
+
+data shape : (1, 20, 1)
+
+End make_data_for_tomorrow !
+
+There is model
+End load_moodel !
+
+End prediction !
+
+[[138198.77]]
+[[138198.77]]
+Finish sk 
+
+
+Start hyundai
+End load_stock_and_preprocessing !
+
+data shape : (1, 20, 1)
+
+End make_data_for_tomorrow !
+
+There is model
+End load_moodel !
+
+End prediction !
+
+[[229892.11]]
+[[229892.11]]
+Finish hyundai 
+
+
+Start lg
+End load_stock_and_preprocessing !
+
+data shape : (1, 20, 1)
+
+End make_data_for_tomorrow !
+
+There is model
+End load_moodel !
+
+End prediction !
+
+[[802518.3]]
+[[802518.3]]
+Finish lg 
+
+
+Start kakao
+End load_stock_and_preprocessing !
+
+data shape : (1, 20, 1)
+
+End make_data_for_tomorrow !
+
+There is model
+End load_moodel !
+
+End prediction !
+
+[[451138.75]]
+[[451138.75]]
+Finish kakao 
+
+
+Start naver
+End load_stock_and_preprocessing !
+
+data shape : (1, 20, 1)
+
+End make_data_for_tomorrow !
+
+There is model
+End load_moodel !
+
+End prediction !
+
+[[392386.9]]
+[[392386.9]]
+Finish naver 
+
+
